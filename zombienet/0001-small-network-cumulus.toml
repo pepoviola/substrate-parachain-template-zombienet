@@ -1,8 +1,10 @@
+[settings]
+enable_tracing = false
+
 [relaychain]
 default_image = "docker.io/parity/polkadot:v0.9.22"
 default_command = "polkadot"
 default_args = [ "-lparachain=debug" ]
-
 chain = "rococo-local"
 
   [[relaychain.nodes]]
@@ -19,6 +21,6 @@ cumulus_based = true
 
   [parachains.collator]
   name = "collator01"
-  image = "docker.io/parity/polkadot-collator:latest"
-  command = "./target/release/parachain-collator"
+  image = "docker.io/pepoviola/substrate-parachain-template-zombienet:v0.0.0"
+  command = "parachain-collator"
   args = ["-lparachain=debug"]
