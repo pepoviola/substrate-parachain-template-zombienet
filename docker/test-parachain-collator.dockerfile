@@ -29,7 +29,7 @@ RUN apt-get update && \
 
 # add binary to docker image
 COPY --from=builder \
-    /parachain-template/target/release/polkadot-parachain /usr/local/bin
+    /parachain-template/target/release/parachain-collator /usr/local/bin
 
 USER polkadot
 
