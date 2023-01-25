@@ -29,14 +29,14 @@ RUN apt-get update && \
 
 # add binary to docker image
 COPY --from=builder \
-    /parachain-template/target/release/parachain-collator /usr/local/bin
+    /parachain-template/target/release/parachain-template-node /usr/local/bin
 
 USER polkadot
 
 # check if executable works in this container
-RUN /usr/local/bin/parachain-collator --version
+RUN /usr/local/bin/parachain-template-node --version
 
 EXPOSE 30333 9933 9944 9615
 VOLUME ["/polkadot"]
 
-ENTRYPOINT ["/usr/local/bin/parachain-collator"]
+ENTRYPOINT ["/usr/local/bin/parachain-template-node"]
