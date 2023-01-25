@@ -21,6 +21,6 @@ cumulus_based = true
 
   [parachains.collator]
   name = "collator01"
-  image = "localhost:5000/parachain-template-node"
+  image = "wunderbarnetwork/substrate-parachain-template-zombienet"
   command = "parachain-template-node"
   args = ["-lparachain=debug"]
